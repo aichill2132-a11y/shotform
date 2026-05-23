@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d0f14;
+  --surface:   #161922;
+  --border:    #252a35;
+  --accent:    #f97316;
+  --accent-lo: rgba(249,115,22,0.12);
+  --good:      #22c55e;
+  --good-lo:   rgba(34,197,94,0.12);
+  --warn:      #eab308;
+  --warn-lo:   rgba(234,179,8,0.12);
+  --poor:      #ef4444;
+  --poor-lo:   rgba(239,68,68,0.12);
+  --text:      #f1f5f9;
+  --muted:     #64748b;
+  --radius:    10px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* subtle court-line texture on background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.025) 79px,
+      rgba(255,255,255,0.025) 80px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
