@@ -1,25 +1,47 @@
-# ShotForm — Basketball Jump Shot Analyzer
+# ShotForm — AI Basketball Shot Analysis
 
-Upload a short video of your jump shot and get instant plain-English coaching
-feedback on your knee bend, elbow angle, and body lean.
+ShotForm is an AI-powered basketball training application that analyzes jump-shot mechanics from user-uploaded videos and provides plain-English coaching feedback.
+
+Using computer vision and pose estimation, ShotForm evaluates key shooting metrics such as knee bend, elbow angle at release, and body lean to help players identify mechanical issues and improve shooting consistency.
+
+---
+
+## Key Features
+
+- Upload short basketball shooting videos
+- Detect body landmarks using MediaPipe pose estimation
+- Analyze shooting mechanics from video frames
+- Measure knee bend, elbow angle at release, and body lean
+- Generate automated coaching feedback in plain English
+- Full-stack web application with FastAPI backend and React frontend
+- Built and improved through AI-assisted development workflows using Claude
+
+---
+
+## Motivation
+
+As someone interested in basketball, AI, and human performance, I wanted to explore whether computer vision could be used to give athletes accessible feedback without requiring expensive coaching tools or specialized hardware.
+
+ShotForm combines sports analytics, computer vision, and AI-assisted software development to create a tool that helps players better understand their shooting mechanics through objective video analysis.
 
 ---
 
 ## Stack
 
-| Layer    | Tech                          |
-|----------|-------------------------------|
-| Backend  | Python · FastAPI · MediaPipe  |
-| Frontend | React · Vite                  |
+| Layer | Tech |
+|---|---|
+| Backend | Python · FastAPI · MediaPipe |
+| Frontend | React · Vite |
+| Development | GitHub · Claude-assisted debugging and iteration |
 
 ---
 
 ## Project Structure
 
-```
+```text
 shotform/
 ├── backend/
-│   ├── main.py        # FastAPI app — single POST /analyze route
+│   ├── main.py        # FastAPI app — POST /analyze route
 │   ├── analyzer.py    # Video → pose landmarks → raw metric values
 │   ├── feedback.py    # Metric values → coaching feedback strings
 │   ├── models.py      # Pydantic response schemas
@@ -154,3 +176,14 @@ curl -X POST http://localhost:8000/analyze \
 - [ ] Add wrist snap / follow-through metric
 - [ ] Video history with progress tracking
 - [ ] Real-time webcam mode
+
+## What I Learned
+Building ShotForm helped me gain experience with:
+
+Full-stack application development
+Computer vision and pose estimation
+Backend API design with FastAPI
+Frontend development with React
+Debugging video-analysis workflows
+Translating raw model outputs into user-friendly feedback
+Using AI tools such as Claude to accelerate development, troubleshoot errors, and iterate on product features
